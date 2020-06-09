@@ -19,12 +19,12 @@ public class DerivedData {
         ArrayList<WheelType> visibleWheels = new ArrayList<>();
         Mode mode = state.getMode();
         switch (mode){
-            // case datetime: {
-            //     visibleWheels.add(WheelType.DAY);
-            //     visibleWheels.add(WheelType.HOUR);
-            //     visibleWheels.add(WheelType.MINUTE);
-            //     break;
-            // }
+            case datetime: {
+                visibleWheels.add(WheelType.DAY);
+                visibleWheels.add(WheelType.HOUR);
+                visibleWheels.add(WheelType.MINUTE);
+                break;
+            }
             case time: {
                 visibleWheels.add(WheelType.HOUR);
                 visibleWheels.add(WheelType.MINUTE);
@@ -34,11 +34,6 @@ public class DerivedData {
                 visibleWheels.add(WheelType.YEAR);
                 visibleWheels.add(WheelType.MONTH);
                 visibleWheels.add(WheelType.DATE);
-                break;
-            }
-            case countdown: {
-                visibleWheels.add(WheelType.HOURCOUNTDOWN);
-                visibleWheels.add(WheelType.MINUTECOUNTDOWN);
                 break;
             }
         }
