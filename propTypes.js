@@ -13,7 +13,7 @@ export default {
   onChange: PropTypes.func,
   minimumDate: DateType,
   maximumDate: DateType,
-  mode: PropTypes.oneOf(['date', 'time', 'datetime']),
+  mode: PropTypes.oneOf(['date', 'time', 'datetime', 'countdown']),
   minuteInterval: PropTypes.oneOf([1, 2, 3, 4, 5, 6, 10, 12, 15, 20, 30]),  
   locale: PropTypes.string,
   textColor: PropTypes.string,

@@ -13,7 +13,9 @@ import com.henninghall.date_picker.wheels.AmPmWheel;
 import com.henninghall.date_picker.wheels.DateWheel;
 import com.henninghall.date_picker.wheels.DayWheel;
 import com.henninghall.date_picker.wheels.HourWheel;
+import com.henninghall.date_picker.wheels.HourWheelCountDown;
 import com.henninghall.date_picker.wheels.MinutesWheel;
+import com.henninghall.date_picker.wheels.MinutesWheelCountDown;
 import com.henninghall.date_picker.wheels.MonthWheel;
 import com.henninghall.date_picker.wheels.Wheel;
 import com.henninghall.date_picker.wheels.YearWheel;
@@ -30,8 +32,10 @@ public class Wheels {
 
     private final State state;
     private HourWheel hourWheel;
+    private HourWheel hourWheelCountDown;
     private DayWheel dayWheel;
     private MinutesWheel minutesWheel;
+    private MinutesWheel minutesWheelCountDown;
     private AmPmWheel ampmWheel;
     private DateWheel dateWheel;
     private MonthWheel monthWheel;
@@ -52,8 +56,10 @@ public class Wheels {
         dateWheel = new DateWheel(getPickerWithId(R.id.date), state);
         dayWheel = new DayWheel(getPickerWithId(R.id.day), state);
         minutesWheel = new MinutesWheel(getPickerWithId(R.id.minutes), state);
+        minutesWheelCountDown = new MinutesWheelCountDown(getPickerWithId(R.id.minutes), state);
         ampmWheel = new AmPmWheel(getPickerWithId(R.id.ampm), state);
         hourWheel = new HourWheel(getPickerWithId(R.id.hour), state);
+        hourWheelCountDown = new HourWheelCountDown(getPickerWithId(R.id.hour), state);
         wheelPerWheelType = getWheelPerType();
 
         emptyWheels = new EmptyWheels(rootView, pickerWrapper, state);
@@ -149,7 +155,7 @@ public class Wheels {
     }
 
     private List<Wheel> getAll(){
-        return new ArrayList<>(Arrays.asList(yearWheel, monthWheel, dateWheel, dayWheel, hourWheel, minutesWheel, ampmWheel));
+        return new ArrayList<>(Arrays.asList(yearWheel, monthWheel, dateWheel, dayWheel, hourWheel, minutesWheel, ampmWheel, hourWheelCountDown, minutesWheelCountDown));
     }
 
     private String getDateFormatPattern(){
@@ -176,7 +182,9 @@ public class Wheels {
             put(WheelType.MONTH,monthWheel);
             put(WheelType.DATE, dateWheel);
             put(WheelType.HOUR, hourWheel);
+            put(WheelType.HOURCOUNTDOWN, hourWheelCountDown);
             put(WheelType.MINUTE, minutesWheel);
+            put(WheelType.MINUTECOUNTDOWN, minutesWheelCountDown);
             put(WheelType.AM_PM, ampmWheel);
         }};
     }

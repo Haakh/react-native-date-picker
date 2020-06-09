@@ -36,6 +36,11 @@ public class DerivedData {
                 visibleWheels.add(WheelType.DATE);
                 break;
             }
+            case countdown: {
+                visibleWheels.add(WheelType.HOURCOUNTDOWN);
+                visibleWheels.add(WheelType.MINUTECOUNTDOWN);
+                break;
+            }
         }
         if((mode == Mode.time || mode == Mode.datetime) && Utils.usesAmPm()){
             visibleWheels.add(WheelType.AM_PM);
