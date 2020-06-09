@@ -37,7 +37,7 @@ const heightCheck = new PropCheck(
 const modeCheck = new PropCheck(
   props =>
     props && props.mode && !['datetime', 'date', 'time', 'countdown'].includes(props.mode),
-  "Invalid mode. Valid modes: 'datetime', 'date', 'time'"
+  "Invalid mode. Valid modes: 'datetime', 'date', 'time', 'countdown'"
 )
 
 const colorCheck = new PropCheck(
