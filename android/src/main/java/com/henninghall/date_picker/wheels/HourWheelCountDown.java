@@ -24,7 +24,7 @@ public class HourWheelCountDown extends Wheel {
         int numberOfHours = Utils.usesAmPm() ? 12 : 24;
 
         for(int i=0; i<numberOfHours; i++) {
-            values.add(format.format(cal.getTime()) + 'hours');
+            values.add(format.format(cal.getTime()));
             cal.add(Calendar.HOUR_OF_DAY, 1);
         }
         return values;
