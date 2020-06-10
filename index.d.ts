@@ -34,7 +34,7 @@ export interface DatePickerProps extends ViewProps {
   /**
    * The date picker mode.
    */
-  mode?: 'date' | 'time' | 'datetime'
+  mode?: 'date' | 'time' | 'datetime' | 'countdown'
 
   /**
    * Date change handler.
